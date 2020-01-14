@@ -1,0 +1,45 @@
+{
+  "name": "@silksofthesoul/css-corn",
+  "version": "0.0.0",
+  "description": "Css utility to quickly insert css styles",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "gulp",
+    "check-types": "tsc",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silksofthesoul/css-corn.git"
+  },
+  "keywords": [
+    "css",
+    "styles"
+  ],
+  "author": "Labuzov Evgeny <silksofthesoul@yandex.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Silksofthesoul/css-corn/issues"
+  },
+  "homepage": "https://github.com/Silksofthesoul/css-corn",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-for-of": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "readable-stream": "^3.4.0"
+  }
+}
