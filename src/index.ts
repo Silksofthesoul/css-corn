@@ -116,7 +116,7 @@ export class Css {
     if (willRender) this.render();
     return this;
   }
-
+// TODO: add destory method
   render(): this {
     if (!this._element) {
       console.error(`DOM element <style#${this._id}> is not exist`);
