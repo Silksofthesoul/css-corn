@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="dist/index.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="hello">Hello, frined!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <span>ullamco</span> laboris nisi ut aliquip ex ea commodo consequat. Duis aute <span>irure</span> dolor in reprehenderit in voluptate velit esse cillum dolore <span>eu</span> fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <span>proident</span>, sunt in culpa qui officia deserunt mollit anim id est <span>laborum</span>.</p>
+  <script type="text/javascript">
+    const css = new $Css({ id: 'hello', willRender: true });
+    let time = 1000;
+    const t = val =>  time = val;
+    const arr = [
+      () => { t(10); css.add('head', 'display: block; width: 100%; position: fixed; bottom: 0px; left:0px;')},
+      () => { t(500); css.add('head', 'background: rgba(255,0,0,0.5)')},
+      () => { t(1000); css.add(`#${css.id}`, 'display: block; width: 100%; padding: 1em; font-size: 2em; line-height:2em; word-break: break-word;').render(); },
+      () => { t(1000); css.add(`p span`, 'transition: background 0.25s 0s ease-out')},
+      () => { t(1000); css.add(`p span`, 'background: red')},
+      () => { t(1000); css.add(`p span`, 'font-size: 2em')},
+      () => { t(1000); css.add(`p span`, 'font-size: 8em')},
+      () => { t(1000); css.add(`p span`, 'background: blue')},
+      () => { t(1000); css.del('p span', 'background, abc')},
+      () => {t(1000); css.rename('p span', '.test > .text')},
+      () => {t(1000); css.del('.test > .text')},
+    ];
+    let count = 0;
+    function tp() {
+      if (count > arr.length - 1) return 0;
+      console.log(count);
+      arr[count]();
+      count++;
+      setTimeout(tp, time);
+    }
+    tp();
+  </script>
+</body>
+</html>
