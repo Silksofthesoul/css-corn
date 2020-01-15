@@ -14,22 +14,28 @@
     const css = new $Css({
       id: 'hello'
     });
-    const arr = [
-      () => { css.add('head', 'display: block; width: 100%; position: fixed; bottom: 0px; left:0px;').render(); },
-      () => { css.add('head', 'background: rgba(255,0,0,0.5)').render(); },
-      () => { css.add(`#${css.id}`, 'display: block; width: 100%; padding: 1em; font-size: 2em; line-height:2em; word-break: break-word;').render(); },
-      // () => { css.del('.hello', 'transform, transition').render(); },
-      // ()=>{css.rename('.message__title', '.test > .text').render();},
-    ];
-    let count = 0;
-    function tp() {
-      if (count > arr.length - 1) return 0;
-      console.log(count);
-      arr[count]();
-      count++;
-      setTimeout(tp, 100);
-    }
-    tp();
+
+    console.log(css);
+    // let time = 1000;
+    // const t = val =>  time = val;
+    // const arr = [
+    //   () => { t(10); css.add('head', 'display: block; width: 100%; position: fixed; bottom: 0px; left:0px;').render(); },
+    //   () => { t(500); css.add('head', 'background: rgba(255,0,0,0.5)').render(); },
+    //   () => { t(1000); css.add(`#${css.id}`, 'display: block; width: 100%; padding: 1em; font-size: 2em; line-height:2em; word-break: break-word;').render(); },
+    //   () => { t(1000); css.add(`p span`, 'background: red').render(); },
+    //   () => { t(1000); css.add(`p span`, 'font-size: 2em').render(); },
+    //   // () => { css.del('.hello', 'transform, transition').render(); },
+    //   // ()=>{css.rename('.message__title', '.test > .text').render();},
+    // ];
+    // let count = 0;
+    // function tp() {
+    //   if (count > arr.length - 1) return 0;
+    //   console.log(count);
+    //   arr[count]();
+    //   count++;
+    //   setTimeout(tp, time);
+    // }
+    // tp();
   </script>
 </body>
 </html>
