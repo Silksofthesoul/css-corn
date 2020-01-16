@@ -2,7 +2,7 @@
 [git][git] |
 [github][github] |
 [issues][issues] |
-[npm][npm]
+[npm][npm] |
 [demo][demo]
 
 ---
