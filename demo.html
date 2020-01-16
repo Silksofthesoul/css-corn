@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css-corn</title>
   <script type="text/javascript" src="dist/index.js"></script>
-  <title>Document</title>
 </head>
 <body>
   <h1 class="title">
-    <span>C</span>
+    <span>*</span>
+    <span>*</span>
+    <span>*</span>
+    <span>&nbsp;</span>
+    <span>c</span>
     <span>s</span>
     <span>s</span>
     <span>-</span>
@@ -17,46 +21,204 @@
     <span>o</span>
     <span>r</span>
     <span>n</span>
+    <span>&nbsp;</span>
+    <span>*</span>
+    <span>*</span>
+    <span>*</span>
   </h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <span>ullamco</span> laboris nisi ut aliquip ex ea commodo consequat. Duis aute <span>irure</span> dolor in reprehenderit in voluptate velit esse cillum dolore <span>eu</span> fugiat nulla pariatur. Excepteur sint occaecat cupidatat non <span>proident</span>, sunt in culpa qui officia deserunt mollit anim id est <span>laborum</span>.</p>
+  <!-- TODO: навигация -->
+  <div class="content">
+    <h2 id="ru">Ru</h2>
+    <p class="description">Css-corn &mdash; Утилита для быстрой вставки css стилей непосредственно в документ через тег &lt;style&gt;</p>
+    <p class="description"><strong>Как использовать:</strong></p>
+    <p class="description">- Подключите библиотеку. Например в теге 😃 &lt;head&gt; 😉</p>
+    <pre class="description">
+        ...
+        <strong>&lt;script type="text/javascript" src="path/to/css-corn/index.js"&gt;&lt;/script&gt;</strong>
+      &lt;/head&gt;
+      &lt;body&gt;
+        ...
+    </pre>
+    <p class="description">- Создайте объект используя шаблон класса 🦄 CssCorn 🌽</p>
+    <pre class="description">
+      &lt;script&gt;
+        // Создайте объект
+        <strong>const css = new CssCorn({</strong>
+          <strong>id: 'my-id',</strong> <span>// id тега &lt;style&gt; | Необязательный параметр</span>
+          <strong>willRender: true</strong> <span>// Параметр отвечает, за перманентный рендер вносимых стилей | Не обязательный параметр, по умолчанию &ndash; false</span>
+        <strong>});</strong>
+      &lt;/script&gt;
+    </pre>
+    <p class="description">- Теперь вы можете ➕ добавлять, ➖ удалять и 📝переименовывать стили</p>
+    <pre class="description">
+      &lt;script&gt;
+        <strong>const css1 = new CssCorn();</strong>
+
+        <span>// По шагу на строку </span>
+        <strong>css1.add('body','opacity: 0; font-family: Arial, sans-serif;');
+        css1.add('body h2','font-size: 2em').add('body h1', 'color: red;');
+        css1.render();</strong>
+
+        <span>// chaining style</span>
+        <strong>css1
+          .del('body','opacity') // удалить свойство opacity из body
+          .del('body h1') // удалить правило body h1
+          .render()
+          .add('.magic', 'border: 2px solid red;')
+          .rename('.magic', '.magic * p .magic > .magic + p .magic')
+          .render();</strong>
+
+
+        <span>// вариант использования. Но возможно -- не лучшая практика</span>
+        <strong>new CssCorn({id:'Test'}).add('.test', 'color: green').render();</strong>
+
+        <span>// Еще один пример, когда описанные стили, будут сразу же применятся</span>
+        <strong>let css2 = new CssCorn({id:'wow', willRender})
+          css2
+            .add('.msg': 'color: red')
+            .add('.msg': 'font-weight: bold')
+            .add('.msg span': 'background: blue; font-weight: bold')
+            .del('body');
+        </strong>
+      &lt;/script&gt;
+    </pre>
+    <h2 id="en">En</h2>
+    <p class="description" title="thank you Google Translate">Css-corn - A utility for quickly inserting css styles directly into the document via the &lt;style&gt; tag</p>
+    <p class="description"><strong>How to use:</strong></p>
+    <p class="description">- Connect the library. For example, in the tag 😃 &lt;head&gt; 😉</p>
+    <pre class="description">
+        ...
+        <strong>&lt;script type="text/javascript" src="path/to/css-corn/index.js"&gt;&lt;/script&gt;</strong>
+      &lt;/head&gt;
+      &lt;body&gt;
+        ...
+    </pre>
+    <p class="description">- Create an object using the class template 🦄 CssCorn 🌽</p>
+    <pre class="description">
+      &lt;script&gt;
+        // Create an object
+        <strong>const css = new CssCorn({</strong>
+          <strong>id: 'my-id',</strong> <span>// id of &lt;style&gt; tag | Optional parameter</span>
+          <strong>willRender: true</strong> <span>// The parameter is responsible for the permanent rendering of insertion styles | Optional parameter, false by default</span>
+        <strong>});</strong>
+      &lt;/script&gt;
+    </pre>
+    <p class="description">- Now you can ➕ add, ➖ delete and 📝 rename styles</p>
+    <pre class="description">
+      &lt;script&gt;
+        <strong>const css1 = new CssCorn();</strong>
+
+        <span>// Step By Line</span>
+        <strong>css1.add('body','opacity: 0; font-family: Arial, sans-serif;');
+        css1.add('body h2','font-size: 2em').add('body h1', 'color: red;');
+        css1.render();</strong>
+
+        <span>// chaining style</span>
+        <strong>css1
+          .del('body','opacity') // remove the opacity property from body
+          .del('body h1') // remove the rule body h1
+          .render()
+          .add('.magic', 'border: 2px solid red;')
+          .rename('.magic', '.magic * p .magic > .magic + p .magic')
+          .render();</strong>
+
+
+        <span>// use case. But maybe not the best practice</span>
+        <strong>new CssCorn({id:'Test'}).add('.test', 'color: green').render();</strong>
+
+        <span>// Another example where the described styles will be applied immediately</span>
+        <strong>let css2 = new CssCorn({id:'wow', willRender})
+          css2
+            .add('.msg': 'color: red')
+            .add('.msg': 'font-weight: bold')
+            .add('.msg span': 'background: blue; font-weight: bold')
+            .del('body');
+        </strong>
+      &lt;/script&gt;
+    </pre>
+  </div>
+
   <script type="text/javascript">
     function demo () {
       const css = new CssCorn({
         id: 'my-awesome-Здарова!-id#',
         willRender: true
       });
-      let time = 1000;
-      const t = val =>  time = val;
-      let count = 0;
 
-      css.add(`.title`,`text-align: center; margin-top: 2.5em;`);
-      css.add(`.title span`,`letter-spacing: -0.2em;`);
-      css.add(`.title span`,`transition: font-size 0.25s 0s ease-out, letter-spacing 1s 0s ease-out;`);
+      css
+      .add(`body`,`
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        line-height: 1.654;
+        font-size: 16px;
+        background: rgba(215, 237, 250, 0.5490196078431373);
+        color: #5a5a5a;
+      `)
+      .add('.content','width:640px; margin: 3em auto;')
+      .add(`p.description`,`
+        text-align: left;
+      `)
+      .add(`pre.description`,`
+        padding: 2em;
+        width: 640px;
+        background: #fbfff0;
+        margin: 1em auto;
+        overflow: auto;
+      `)
+      .add(`pre.description span`,`color: green; font-style: italic; opacity:0.8; font-size:0.8em`)
+      .add(`.title`,`text-align: center; margin-top: 2.5em;`)
+      .add(`.title`,`opacity: 0.5`)
+      .add(`.title`,`transition: opacity 0.25s 0s ease-out`)
+      .add(`.title span`,`letter-spacing: -0.2em;`)
+      .add(`.title span`,`transition: transform 0.25s 0s ease-out, letter-spacing 1s 0s ease-out;`)
+      .add(`.title span`,`display: inline-block`);
 
+      const fac = (time, cb) => {
+        let obj = {
+          steps: [],
+          count: 0
+        }
+        obj.step = (time, cb) => {
+          obj.steps.push({time, cb});
+          return obj;
+        }
+        obj.run = () => {
+          obj.steps[obj.count].cb();
+          obj.count++;
+          if (obj.count > obj.steps.length - 1) return false;
+          setTimeout(obj.run, obj.steps[obj.count].time);
+        }
+        return obj.step(time, cb);
+      };
+      let isPlay = false;
+      const title = document.querySelector('.title');
+      const play = () => {
+        if(isPlay) return false;
+        fac(100, () => isPlay = true)
+        .step(200, () => css.add(`.title span:nth-child(1)`,`transform: scale(1});`))
+        .step(300, () => css.add(`.title span:nth-child(2)`,`transform: scale(2);`).del(`.title span:nth-child(1)`).add(`.title`,`opacity: 0.6`))
+        .step(400, () => css.add(`.title span:nth-child(3)`,`transform: scale(3);`).del(`.title span:nth-child(2)`).add(`.title`,`opacity: 0.66`))
+        .step(500, () => css.add(`.title span:nth-child(4)`,`transform: scale(4);`).del(`.title span:nth-child(3)`).add(`.title`,`opacity: 0.7`))
+        .step(600, () => css.add(`.title span:nth-child(5)`,`transform: scale(5);`).del(`.title span:nth-child(4)`).add(`.title`,`opacity: 0.77`))
+        .step(700, () => css.add(`.title span:nth-child(6)`,`transform: scale(6);`).del(`.title span:nth-child(5)`).add(`.title`,`opacity: 0.8`))
+        .step(600, () => css.add(`.title span:nth-child(7)`,`transform: scale(7);`).del(`.title span:nth-child(6)`).add(`.title`,`opacity: 0.88`))
+        .step(500, () => css.add(`.title span:nth-child(8)`,`transform: scale(8);`).del(`.title span:nth-child(7)`).add(`.title`,`opacity: 0.9`))
+        .step(400, () => css.add(`.title span:nth-child(9)`,`transform: scale(9);`).del(`.title span:nth-child(8)`).add(`.title`,`opacity: 0.99`))
+        .step(300, () => css.add(`.title span:nth-child(10)`,`transform: scale(8);`).del(`.title span:nth-child(9)`).add(`.title`,`opacity: 0.8`))
+        .step(200, () => css.add(`.title span:nth-child(11)`,`transform: scale(7);`).del(`.title span:nth-child(10)`).add(`.title`,`opacity: 0.7`))
+        .step(300, () => css.add(`.title span:nth-child(12)`,`transform: scale(6);`).del(`.title span:nth-child(11)`).add(`.title`,`opacity: 0.6`))
+        .step(400, () => css.add(`.title span:nth-child(13)`,`transform: scale(5);`).del(`.title span:nth-child(12)`).add(`.title`,`opacity: 0.5`))
+        .step(500, () => css.add(`.title span:nth-child(14)`,`transform: scale(4);`).del(`.title span:nth-child(13)`).add(`.title`,`opacity: 0.4`))
+        .step(600, () => css.add(`.title span:nth-child(15)`,`transform: scale(3);`).del(`.title span:nth-child(14)`).add(`.title`,`opacity: 0.3`))
+        .step(500, () => css.add(`.title span:nth-child(16)`,`transform: scale(2);`).del(`.title span:nth-child(15)`).add(`.title`,`opacity: 0.2`))
+        .step(400, () => css.add(`.title span:nth-child(17)`,`transform: scale(1);`).del(`.title span:nth-child(16)`).add(`.title`,`opacity: 0.5`))
+        .step(300, () => css.add(`.title span`,`letter-spacing: 3em;`))
+        .step(200, () => css.add(`.title span`,`letter-spacing: -0.3em;`))
+        .step(200, () => isPlay = false)
+        .run();
+      };
+      play();
+      title.addEventListener('click', play, false);
 
-      const arr = [
-        () => {t(100); return ':-)'},
-        () => {t(200); css.add(`.title span:nth-child(${count})`,`font-size: 2em;`)},
-        () => {t(300); css.add(`.title span:nth-child(${count})`,`font-size: 3em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(400); css.add(`.title span:nth-child(${count})`,`font-size: 4em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(500); css.add(`.title span:nth-child(${count})`,`font-size: 5em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(400); css.add(`.title span:nth-child(${count})`,`font-size: 6em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(300); css.add(`.title span:nth-child(${count})`,`font-size: 5em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(200); css.add(`.title span:nth-child(${count})`,`font-size: 4em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(100); css.add(`.title span:nth-child(${count})`,`font-size: 3em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(50); css.add(`.title span:nth-child(${count})`,`font-size: 2em;`).del(`.title span:nth-child(${count - 1})`)},
-        () => {t(500); css.add(`.title span`,`letter-spacing: 3em;`)},
-        () => {t(500); css.add(`.title span`,`letter-spacing: -0.3em;`)},
-      ];
-
-      function playDemo() {
-        if (count > arr.length - 1) return 0;
-        arr[count]();
-        count++;
-        setTimeout(playDemo, time);
-      }
-
-      playDemo();
     }
     if(CssCorn) demo();
 
