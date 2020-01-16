@@ -3,6 +3,7 @@
 [github][github] |
 [issues][issues] |
 [npm][npm]
+[demo][demo]
 
 ---
 
@@ -147,3 +148,4 @@ Now you can ➕ add, ➖ delete and 📝 rename styles
 [github]:https://github.com/Silksofthesoul/css-corn
 [issues]:https://github.com/Silksofthesoul/css-corn/issues
 [npm]:https://kkkkkkk
+[demo]:https://github.com/Silksofthesoul/css-corn/blob/master/demo.html
