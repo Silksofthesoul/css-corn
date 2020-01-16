@@ -1,7 +1,7 @@
 declare global {
-  interface Window { $Css: any; }
+  interface Window { CssCorn: any; }
 }
-window.$Css = window.$Css || {};
+window.CssCorn = window.CssCorn || {};
 
 const addProperty = (key: string, value: any, obj: object): any => ({ [key]: value, ...obj });
 const removeProperty = (prop: string): any => ({ [prop]: undefined, ...obj }: any): any => obj;
@@ -27,7 +27,6 @@ interface ICss {
 }
 
 const isType: TEqual = (val: any, type: string): boolean => typeof val === type;
-isType('123', 'asd');
 
 export class Css {
   private _id: TId;
@@ -75,16 +74,37 @@ export class Css {
   }
 
   public set id(id: TId) {
-    if (this._element) this._element.id = id;
-    this._id = id;
+    const newId = this.idProcess(id);
+    if (!isType(newId, 'string')) {
+      console.error(this.errorMsg('Wrong property type!', '$Css.id: %type%', newId, 'string'));
+    } else {
+      if (this._element) this._element.id = newId;
+      this._id = newId;
+    }
   }
   public get id() { return this._id }
 
   public set styles(val: IStyle) { this._styles = val; }
   public get styles() { return this._styles }
 
-  private getWillRender() { return this.willRender; }
+  private idProcess(id: string): string {
+    return id
+      .replace(/[\s]/igm, '-')
+      .replace(/[\W_]/igm, '-')
+      .replace(/[-]{2,}/igm, '-')
+      .replace(/^\-/igm, '')
+      .replace(/\-$/igm, '');
+  }
+  private getWillRender(): boolean { return this.willRender; }
 
+  private errorMsg(msg: string, key: string, val: any, type: string): string {
+    const replacer = (str: string, t: string): string => str.replace(/%type%/igm, t).replace(/%.*%/igm, '')
+    return `
+    [ ${msg} ]\n
+    [ ${replacer(key, typeof val)} = ${val} ]\n
+    [ ${replacer(key, type)} ]\n
+    [ Value must be ${type} ]\n`;
+  }
 
   private parse(stylesString: string): IProperty {
     return stylesString
@@ -107,7 +127,35 @@ export class Css {
 
   private getStyle(styleString: string): IProperty { return this.parse(styleString); }
 
-  public add(selector: string, styleString: string, willRender: boolean = this.getWillRender()) {
+  public add(selector: string, styleString: string, willRender: boolean = this.getWillRender()): this {
+    if (!isType(selector, 'string') || !isType(styleString, 'string') || !isType(willRender, 'boolean')) {
+      console.error(`Wrong arguments type! $Css.add(string, string, boolean)!`);
+      if (!isType(selector, 'string')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.add(SELECTOR: %type%, ..., ...)',
+          selector,
+          'string'
+        ));
+      }
+      if (!isType(styleString, 'string')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.add(..., STYLESTRING: %type%, ...)',
+          styleString,
+          'string'
+        ));
+      }
+      if (!isType(willRender, 'boolean')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.add(..., ..., WILLRENDER: %type%)',
+          willRender,
+          'boolean'
+        ));
+      }
+      return this;
+    }
     let styles = this.getStyle(styleString);
     this._styles[selector] = <IProperty>{ ...this._styles[selector], ...styles };
     if (willRender) this.render();
@@ -115,6 +163,34 @@ export class Css {
   }
 
   del(selector: string, params: string = '', willRender: boolean = this.getWillRender()): this {
+    if (!isType(selector, 'string') || !isType(params, 'string') || !isType(willRender, 'boolean')) {
+      console.error(`Wrong arguments type! $Css.del(string, string, boolean)!`);
+      if (!isType(selector, 'string')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.del(SELECTOR: %type%, ..., ...)',
+          selector,
+          'string'
+        ));
+      }
+      if (!isType(params, 'string')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.del(..., PARAMS: %type%, ...)',
+          params,
+          'string'
+        ));
+      }
+      if (!isType(willRender, 'boolean')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.del(..., ..., WILLRENDER: %type%)',
+          willRender,
+          'boolean'
+        ));
+      }
+      return this;
+    }
     if (!params) {
       this._styles = removeProperty(selector)(this._styles);
     } else {
@@ -128,11 +204,39 @@ export class Css {
   }
 
   rename(selector: string, newSelector: string = '', willRender: boolean = this.getWillRender()): this {
+    if (!isType(selector, 'string') || !isType(newSelector, 'string') || !isType(willRender, 'boolean')) {
+      console.error(`Wrong arguments type! $Css.rename(string, string, boolean)!`);
+      if (!isType(selector, 'string')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.rename(SELECTOR: %type%, ..., ...)',
+          selector,
+          'string'
+        ));
+      }
+      if (!isType(newSelector, 'string')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.rename(..., NEWSELECTOR: %type%, ...)',
+          newSelector,
+          'string'
+        ));
+      }
+      if (!isType(willRender, 'boolean')) {
+        console.error(this.errorMsg(
+          'Wrong argument type!',
+          '$Css.rename(..., ..., WILLRENDER: %type%)',
+          willRender,
+          'boolean'
+        ));
+      }
+      return this;
+    }
     if (this._styles[selector]) this._styles = renameProperty(selector, newSelector, this._styles);
     if (willRender) this.render();
     return this;
   }
-// TODO: add destory method
+  // TODO: add destory method
   render(): this {
     if (!this._element) {
       console.error(`DOM element <style#${this._id}> is not exist`);
@@ -146,5 +250,5 @@ export class Css {
   }
 };
 
-window.$Css = Css;
+window.CssCorn = Css;
 export default Css;
