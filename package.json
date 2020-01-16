@@ -9,6 +9,7 @@
     "css",
     "styles"
   ],
+  "files": ["dist/**/*"],
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
