@@ -1,28 +1,35 @@
 # css-corn
-[git][git] |
-[github][github] |
-[issues][issues] |
-[npm][npm] |
-[demo][demo]
 
----
+[git][git] \|
+[github][github] \|
+[issues][issues] \|
+[demo][demo] \|
+[npm][npm]
 
-- [Ru](#ru)
-  - [Установка](#установка)
-  - [Как использовать](#как-использовать)
-- [En](#en)
-  - [Install](#install)
-  - [How to use](#How-to-use)
+[![NPM version](https://img.shields.io/npm/v/@silksofthesoul/css-corn.svg?style=flat)](https://www.npmjs.com/package/@silksofthesoul/css-corn) [![NPM monthly downloads](https://img.shields.io/npm/dm/@silksofthesoul/css-corn.svg?style=flat)](https://npmjs.org/package/@silksofthesoul/css-corn) [![NPM total downloads](https://img.shields.io/npm/dt/@silksofthesoul/css-corn.svg?style=flat)](https://npmjs.org/package/@silksofthesoul/css-corn)
+* * *
+
+-   [Ru](#ru)
+    -   [Установка](#установка)
+    -   [Как использовать](#как-использовать)
+-   [En](#en)
+    -   [Install](#install)
+    -   [How to use](#How-to-use)
 
 ### Ru
+
 Css-corn — Утилита для быстрой вставки css стилей непосредственно в документ через тег `<style>`
 
 ##### Установка:
+
 npm:
+
 ```bash
-  npm i -S css-corn
+  npm i @silksofthesoul/css-corn
 ```
+
 git:
+
 ```bash
   git clone https://github.com/Silksofthesoul/css-corn.git
   cd css-corn
@@ -30,7 +37,9 @@ git:
 ```
 
 ##### Как использовать:
+
 Подключите библиотеку. Например в теге 😃 `<head>` 😉
+
 ```html
   ...
       <script type="text/javascript" src="path/to/css-corn/index.js"></script>
@@ -38,6 +47,7 @@ git:
   <body>
   ...
 ```
+
 Создайте объект используя шаблон класса 🦄 CssCorn 🌽
 
 ```html
@@ -49,6 +59,7 @@ git:
   });
 </script>
 ```
+
 Теперь вы можете ➕ добавлять, ➖ удалять и 📝переименовывать стили
 
 ```html
@@ -84,8 +95,24 @@ git:
 ```
 
 ### En
+
 Css-corn - A utility for quickly inserting css styles directly into the document via the `<style>` tag
-##### Установка:
+
+##### Install:
+
+npm:
+
+```bash
+  npm i @silksofthesoul/css-corn
+```
+
+git:
+
+```bash
+  git clone https://github.com/Silksofthesoul/css-corn.git
+  cd css-corn
+  npm install && npm run build:js
+```
 
 ##### How to use:
 
@@ -97,7 +124,6 @@ Connect the library. For example, in the tag 😃 `<head>` 😉
     </head>
   <body>
   ...
-
 ```
 
 Create an object using the class template 🦄 CssCorn 🌽
@@ -109,9 +135,11 @@ Create an object using the class template 🦄 CssCorn 🌽
     id: 'my-id', // id of <style> tag | Optional parameter
     willRender: true // The parameter is responsible for the permanent rendering of insertion styles | Optional parameter, false by default
   });
-</script>   
+</script>
 ```
+
 Now you can ➕ add, ➖ delete and 📝 rename styles
+
 ```html
 <script>
   const css1 = new CssCorn();
@@ -144,8 +172,13 @@ Now you can ➕ add, ➖ delete and 📝 rename styles
 
 </script>
 ```
-[git]:https://github.com/Silksofthesoul/css-corn.git
-[github]:https://github.com/Silksofthesoul/css-corn
-[issues]:https://github.com/Silksofthesoul/css-corn/issues
-[npm]:https://kkkkkkk
-[demo]:https://github.com/Silksofthesoul/css-corn/blob/master/demo.html
+
+[git]: https://github.com/Silksofthesoul/css-corn.git
+
+[github]: https://github.com/Silksofthesoul/css-corn
+
+[issues]: https://github.com/Silksofthesoul/css-corn/issues
+
+[npm]: https://www.npmjs.com/package/@silksofthesoul/css-corn
+
+[demo]: https://github.com/Silksofthesoul/css-corn/blob/master/demo.html
