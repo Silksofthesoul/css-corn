@@ -1,6 +1,6 @@
 {
   "name": "@silksofthesoul/css-corn",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "author": "Labuzov Evgeny <silksofthesoul@yandex.ru>",
   "license": "MIT",
   "description": "Css utility to quickly insert css styles",
@@ -9,7 +9,9 @@
     "css",
     "styles"
   ],
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
