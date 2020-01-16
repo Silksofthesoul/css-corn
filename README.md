@@ -7,6 +7,7 @@
 - [Ru](#ru)
   - [Как использовать](#как-использовать)
 - [En](#en)
+  - [How to use](#How-to-use)
 
 ### Ru
 Css-corn — Утилита для быстрой вставки css стилей непосредственно в документ через тег \<style\>
@@ -68,7 +69,7 @@ Css-corn — Утилита для быстрой вставки css стиле�
 ### En
 Css-corn - A utility for quickly inserting css styles directly into the document via the \<style\> tag
 
-**How to use:**
+##### How to use:
 
 Connect the library. For example, in the tag 😃 \<head\> 😉
 
