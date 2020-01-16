@@ -4,16 +4,32 @@
 [issues][issues] |
 [npm][npm]
 
+---
+
 - [Ru](#ru)
+  - [Установка](#установка)
   - [Как использовать](#как-использовать)
 - [En](#en)
+  - [Install](#install)
   - [How to use](#How-to-use)
 
 ### Ru
-Css-corn — Утилита для быстрой вставки css стилей непосредственно в документ через тег \<style\>
+Css-corn — Утилита для быстрой вставки css стилей непосредственно в документ через тег `<style>`
+
+##### Установка:
+npm:
+```bash
+  npm i -S css-corn
+```
+git:
+```bash
+  git clone https://github.com/Silksofthesoul/css-corn.git
+  cd css-corn
+  npm install && npm run build:js
+```
 
 ##### Как использовать:
-Подключите библиотеку. Например в теге 😃 \<head\> 😉
+Подключите библиотеку. Например в теге 😃 `<head>` 😉
 ```html
   ...
       <script type="text/javascript" src="path/to/css-corn/index.js"></script>
@@ -67,11 +83,12 @@ Css-corn — Утилита для быстрой вставки css стиле�
 ```
 
 ### En
-Css-corn - A utility for quickly inserting css styles directly into the document via the \<style\> tag
+Css-corn - A utility for quickly inserting css styles directly into the document via the `<style>` tag
+##### Установка:
 
 ##### How to use:
 
-Connect the library. For example, in the tag 😃 \<head\> 😉
+Connect the library. For example, in the tag 😃 `<head>` 😉
 
 ```html
   ...
