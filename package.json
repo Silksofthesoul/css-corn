@@ -1,6 +1,6 @@
 {
   "name": "@silksofthesoul/css-corn",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "author": "Labuzov Evgeny <silksofthesoul@yandex.ru>",
   "license": "MIT",
   "description": "Css utility to quickly insert css styles",
