@@ -1,6 +1,6 @@
 {
   "name": "@silksofthesoul/css-corn",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "description": "Css utility to quickly insert css styles",
   "main": "dist/index.js",
   "scripts": {
