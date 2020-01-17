@@ -4,11 +4,13 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   // Change to your "entry-point".
-  mode: 'development',
+  mode: 'public',
   entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
-    path: path.resolve(__dirname),
-    filename: 'index.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    library: 'CssCorn',
+    libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json']
