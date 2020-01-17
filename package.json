@@ -16,7 +16,7 @@
     "build:js": "webpack --mode=production",
     "build:js:watch": "webpack --mode=development --watch",
     "build": "npm run build:types && npm run build:js",
-    "prepublish": "npm run build:js"
+    "prepublish": "npm run build"
   },
   "homepage": "https://github.com/Silksofthesoul/css-corn",
   "bugs": {
