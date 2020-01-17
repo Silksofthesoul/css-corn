@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>css-corn</title>
-  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="dist/index.js"></script>
 </head>
 <body>
   <h1 class="title">
@@ -43,8 +43,8 @@
           <li><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">Установка</a></li>
           <li>
             <ul>
-              <li><a href="#!script">Подключение через тег script</a></li>
-              <li><a href="#!import-require">Подключение через тег import-require</a></li>
+              <li><a href="#подключение-через-тег-script">Подключение через тег script</a></li>
+              <li><a href="#подключение-через-тег-import-require">Подключение через тег import-require</a></li>
             </ul>
           </li>
           <li><a href="#%D0%BA%D0%B0%D0%BA-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C">Как использовать</a></li>
@@ -75,6 +75,30 @@
       cd css-corn
       npm install && npm run build:js
     </pre>
+
+    <p class="description" id="подключение-через-тег-script"><strong>Подключение через тег script:</strong></p>
+    <p class="description">Вы можете подключить библиотеку скачав скрипт самостоятельно, и подключив его к проекту с помощью тега &lt;script&gt;</p>
+    <pre class="description">
+      &lt;script type="text/javascript" src="/css-corn/index.js"&gt;&lt;script&gt;
+    </pre>
+    <p class="description">...и использовать так:</p>
+    <pre class="description">
+      let cssCorn = new $CssCorn();
+    </pre>
+    <p class="description" id="подключение-через-тег-import-require"><strong>Подключение через тег import-require:</strong></p>
+    <p class="description">Вы можете подключить библиотеку установив пакет через npm и использовать конструкцию import/require</p>
+    <pre class="description">
+        import cssCorn from '@silksofthesoul/css-corn';
+    </pre>
+    <p class="description">или:</p>
+    <pre class="description">
+      const CssCorn = require('@silksofthesoul/css-corn');
+    </pre>
+    <p class="description">...и использовать так:</p>
+    <pre class="description">
+      let cssCorn = new CssCorn();
+    </pre>
+
     <p class="description" id="%D0%BA%D0%B0%D0%BA-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C"><strong>Как использовать:</strong></p>
     <p class="description">&mdash;&nbsp;Подключите библиотеку. Например в&nbsp;теге 😃 &lt;head&gt; 😉</p>
     <pre class="description">
@@ -88,7 +112,7 @@
     <pre class="description">
       &lt;script&gt;
         // Создайте объект
-        <strong>const css = new CssCorn({</strong>
+        <strong>const css = new $CssCorn({</strong> <span>// или new CssCorn &mdash если вы импортируете модуль</span>
           <strong>id: 'my-id',</strong> <span>// id тега &lt;style&gt; | Необязательный параметр</span>
           <strong>willRender: true</strong> <span>// Параметр отвечает, за перманентный рендер вносимых стилей | Не обязательный параметр, по умолчанию &ndash; false</span>
         <strong>});</strong>
@@ -97,7 +121,8 @@
     <p class="description">&mdash;&nbsp;Теперь вы&nbsp;можете ➕ добавлять, ➖ удалять и&nbsp;📝переименовывать стили</p>
     <pre class="description">
       &lt;script&gt;
-        <strong>const css1 = new CssCorn();</strong>
+        import {CssCorn as MyAwesomeCssUnicorn} from '@silksofthesoul/css-corn';
+        <strong>const css1 = new MyAwesomeCssUnicorn();</strong>
 
         <span>// По шагу на строку </span>
         <strong>css1.add('body','opacity: 0; font-family: Arial, sans-serif;');
@@ -138,6 +163,22 @@
       cd css-corn
       npm install && npm run build:js
     </pre>
+
+    <p class="description" id="script"><strong>script:</strong></p>
+    <p class="description">You can connect the library by downloading the script yourself, and connecting it to the project using the &lt;script&gt; tag</p>
+    <pre class="description">
+      &lt;script type="text/javascript" src="/css-corn/index.js"&gt;&lt;script&gt;
+    </pre>
+    <p class="description" id="import-require"><strong>import-require:</strong></p>
+    <p class="description">You can connect the library by installing the package via npm and use the import / require construct</p>
+    <pre class="description">
+        import cssCorn from '@silksofthesoul/css-corn';
+    </pre>
+    <p class="description">или:</p>
+    <pre class="description">
+      const cssCorn = require('@silksofthesoul/css-corn');
+    </pre>
+
     <p class="description" id ="How-to-use"><strong>How to use:</strong></p>
     <p class="description">&mdash;&nbsp;Connect the library. For example, in the tag 😃 &lt;head&gt; 😉</p>
     <pre class="description">
@@ -151,7 +192,7 @@
     <pre class="description">
       &lt;script&gt;
         // Create an object
-        <strong>const css = new CssCorn({</strong>
+        <strong>const css = new CssCorn({</strong> <span>// or "new CssCorn" &mdash if you import/require a module</span>
           <strong>id: 'my-id',</strong> <span>// id of &lt;style&gt; tag | Optional parameter</span>
           <strong>willRender: true</strong> <span>// The parameter is responsible for the permanent rendering of insertion styles | Optional parameter, false by default</span>
         <strong>});</strong>
@@ -160,7 +201,8 @@
     <p class="description">&mdash;&nbsp;Now you can ➕ add, ➖ delete and 📝 rename styles</p>
     <pre class="description">
       &lt;script&gt;
-        <strong>const css1 = new CssCorn();</strong>
+        import {CssCorn as MyAwesomeCssUnicorn} from '@silksofthesoul/css-corn';
+        <strong>const css1 = new MyAwesomeCssUnicorn();</strong>
 
         <span>// Step By Line</span>
         <strong>css1.add('body','opacity: 0; font-family: Arial, sans-serif;');
@@ -194,7 +236,7 @@
 
   <script type="text/javascript">
     function demo () {
-      const css = new CssCorn({
+      const css = new $CssCorn({
         id: 'my-awesome-Здарова!-id#',
         willRender: true
       });

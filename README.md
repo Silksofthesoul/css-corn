@@ -11,8 +11,8 @@
 
 -   [Ru](#ru)
     -   [Установка](#установка)
-      -   [Подключение через тег script](#Подключение-через-тег-script)
-      -   [Подключение через тег import-require](#Подключение-через-тег-import-require)
+      -   [Подключение через тег script](#подключение-через-тег-script)
+      -   [Подключение через тег import-require](#подключение-через-тег-import-require)
     -   [Как использовать](#как-использовать)
 -   [En](#en)
     -   [Install](#install)
@@ -29,7 +29,7 @@ Css-corn — Утилита для быстрой вставки css стиле�
 npm:
 
 ```bash
-  npm i @silksofthesoul/css-corn
+  npm i -s @silksofthesoul/css-corn
 ```
 
 git:
@@ -47,18 +47,25 @@ git:
 ```html
   <script type="text/javascript" src="/css-corn/index.js"></script>
 ```
+...и использовать так:
+```js
+  let cssCorn = new $CssCorn();
+```
 
 ##### Подключение через тег import-require:
 
 Вы можете подключить библиотеку установив пакет через npm и использовать конструкцию import/require
 ```js
-  import cssCorn from '@silksofthesoul/css-corn';
+  import CssCorn from '@silksofthesoul/css-corn';
 ```
 или:
 ```js
-  const cssCorn = require('@silksofthesoul/css-corn');
+  const CssCorn = require('@silksofthesoul/css-corn');
 ```
-
+...и использовать так:
+```js
+  let cssCorn = new CssCorn();
+```
 #### Как использовать:
 
 Подключите библиотеку. Например в теге 😃 `<head>` 😉
@@ -144,16 +151,24 @@ You can connect the library by downloading the script yourself, and connecting i
 ```html
   <script type="text/javascript" src="/css-corn/index.js"></script>
 ```
+...and use it:
+```js
+  let cssCorn = new $CssCorn();
+```
 
 ##### import-require:
 
 You can connect the library by installing the package via npm and use the import / require construct
 ```js
-  import cssCorn from '@silksofthesoul/css-corn';
+  import CssCorn from '@silksofthesoul/css-corn';
 ```
 or:
 ```js
-  const cssCorn = require('@silksofthesoul/css-corn');
+  const CssCorn = require('@silksofthesoul/css-corn');
+```
+...and use it:
+```js
+  let cssCorn = new $CssCorn();
 ```
 
 #### How to use:
