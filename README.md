@@ -3,6 +3,7 @@
 [git][git] \|
 [github][github] \|
 [issues][issues] \|
+[download][download] \|
 [demo][demo] \|
 [npm][npm]
 
@@ -42,7 +43,7 @@ git:
 
 ##### Подключение через тег script:
 
-Вы можете подключить библиотеку скачав скрипт самостоятельно, и подключив его к проекту с помощью тега `<script>`
+Вы можете подключить библиотеку [скачав][download] скрипт самостоятельно, и подключив его к проекту с помощью тега `<script>`
 
 ```html
   <script type="text/javascript" src="/css-corn/index.js"></script>
@@ -147,7 +148,7 @@ git:
 
 ##### script:
 
-You can connect the library by downloading the script yourself, and connecting it to the project using the `<script>` tag
+You can connect the library by [downloading][download] the script yourself, and connecting it to the project using the `<script>` tag
 
 ```html
   <script type="text/javascript" src="/css-corn/index.js"></script>
@@ -237,6 +238,8 @@ Now you can ➕ add, ➖ delete and 📝 rename styles
 [github]: https://github.com/Silksofthesoul/css-corn
 
 [issues]: https://github.com/Silksofthesoul/css-corn/issues
+
+[download]: https://github.com/Silksofthesoul/css-corn/blob/master/dist/index.js
 
 [npm]: https://www.npmjs.com/package/@silksofthesoul/css-corn
 
