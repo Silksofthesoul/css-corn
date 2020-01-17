@@ -11,8 +11,8 @@
 
 -   [Ru](#ru)
     -   [Установка](#установка)
-      -   [script](#script)
-      -   [import-require](#import-require)
+      -   [Подключение через тег script](#Подключение-через-тег-script)
+      -   [Подключение через тег import-require](#Подключение-через-тег-import-require)
     -   [Как использовать](#как-использовать)
 -   [En](#en)
     -   [Install](#install)
@@ -40,7 +40,7 @@ git:
   npm install && npm run build:js
 ```
 
-##### script:
+##### Подключение через тег script:
 
 Вы можете подключить библиотеку скачав скрипт самостоятельно, и подключив его к проекту с помощью тега `<script>`
 
@@ -48,7 +48,7 @@ git:
   <script type="text/javascript" src="/css-corn/index.js"></script>
 ```
 
-##### import-require:
+##### Подключение через тег import-require:
 
 Вы можете подключить библиотеку установив пакет через npm и использовать конструкцию import/require
 ```js
