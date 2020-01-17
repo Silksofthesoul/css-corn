@@ -1,6 +1,6 @@
 declare global {
     interface Window {
-        CssCorn: any;
+        $CssCorn: any;
     }
 }
 declare type TId = string;

@@ -1,7 +1,7 @@
 declare global {
-  interface Window { CssCorn: any; }
+  interface Window { $CssCorn: any; }
 }
-window.CssCorn = window.CssCorn || {};
+window.$CssCorn = window.$CssCorn || {};
 
 const addProperty = (key: string, value: any, obj: object): any => ({ [key]: value, ...obj });
 const removeProperty = (prop: string): any => ({ [prop]: undefined, ...obj }: any): any => obj;
@@ -239,6 +239,6 @@ export class CssCorn {
   }
 };
 
-window.CssCorn = CssCorn;
+window.$CssCorn = CssCorn;
 export default CssCorn;
 // export default CssCorn;
