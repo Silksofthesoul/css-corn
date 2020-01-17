@@ -17,7 +17,6 @@ interface IStyle {
   [selector: string]: IProperty
 };
 
-// console.log(isType([1,2,3,4], 'object'));
 interface ICss {
   id: TId,
   _id: TId,
@@ -28,37 +27,27 @@ interface ICss {
 
 const isType: TEqual = (val: any, type: string): boolean => typeof val === type;
 
-export class Css {
+export class CssCorn {
   private _id: TId;
   private _styles: IStyle;
   private _element: HTMLElement | null;
   readonly willRender: boolean;
   constructor(_params?: ICss) {
-    let __params = {
-      id: '',
-      styles: {},
+    if (_params && _params.styles) {
+      _params = removeProperty('styles')(_params);
+    }
+    const defaultId: string = 'css-corn';
+    const params: ICss = {
+      ...{} as ICss,
+      id: defaultId,
+      styles: <IStyle>{},
       willRender: false,
       ..._params
     };
-    const newId: string = this.idProcess(__params.id);
-    if (!isType(newId, 'string')) {
-      console.error(this.errorMsg('Wrong arguments property type (Id was processed)!', '$Css({id: %type%})', newId, 'string'));
-      __params = removeProperty('id')(__params);
-    }
-    if (!isType(__params.willRender, 'boolean')) {
-      console.error(this.errorMsg('Wrong arguments property type!', '$Css({willRender: %type%})', __params.willRender, 'boolean'));
-      __params = removeProperty('willRender')(__params);
-    }
-    __params = removeProperty('styles')(__params);
-    const params: ICss = {
-      ...{} as ICss,
-      id: 'css-corn',
-      styles: <IStyle>{},
-      willRender: false,
-      ...__params
-    };
 
-    this._id = newId;
+    if (!isType(params.id, 'string')) params.id = defaultId;
+
+    this._id = this.idProcess(params.id);
     this._styles = params.styles;
     this.willRender = params.willRender;
 
@@ -250,5 +239,6 @@ export class Css {
   }
 };
 
-window.CssCorn = Css;
-export default Css;
+window.CssCorn = CssCorn;
+export default CssCorn;
+// export default CssCorn;
