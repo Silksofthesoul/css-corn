@@ -11,16 +11,20 @@
 
 -   [Ru](#ru)
     -   [Установка](#установка)
+      -   [script](#script)
+      -   [import-require](#import-require)
     -   [Как использовать](#как-использовать)
 -   [En](#en)
     -   [Install](#install)
+      -   [script](#script)
+      -   [import-require](#import-require)
     -   [How to use](#How-to-use)
 
 ### Ru
 
 Css-corn — Утилита для быстрой вставки css стилей непосредственно в документ через тег `<style>`
 
-##### Установка:
+#### Установка:
 
 npm:
 
@@ -36,7 +40,26 @@ git:
   npm install && npm run build:js
 ```
 
-##### Как использовать:
+##### script:
+
+Вы можете подключить библиотеку скачав скрипт самостоятельно, и подключив его к проекту с помощью тега `<script>`
+
+```html
+  <script type="text/javascript" src="/css-corn/index.js"></script>
+```
+
+##### import-require:
+
+Вы можете подключить библиотеку установив пакет через npm и использовать конструкцию import/require
+```js
+  import cssCorn from '@silksofthesoul/css-corn';
+```
+или:
+```js
+  const cssCorn = require('@silksofthesoul/css-corn');
+```
+
+#### Как использовать:
 
 Подключите библиотеку. Например в теге 😃 `<head>` 😉
 
@@ -54,7 +77,7 @@ git:
 <script>
   // Создайте объект
   const css = new CssCorn({
-    id: 'my-id', // id тега \<style\> | Необязательный параметр
+    id: 'my-id', // id тега <style> | Необязательный параметр
     willRender: true // Параметр отвечает, за перманентный рендер вносимых стилей | Не обязательный параметр, по умолчанию – false
   });
 </script>
@@ -98,7 +121,7 @@ git:
 
 Css-corn - A utility for quickly inserting css styles directly into the document via the `<style>` tag
 
-##### Install:
+#### Install:
 
 npm:
 
@@ -114,7 +137,26 @@ git:
   npm install && npm run build:js
 ```
 
-##### How to use:
+##### script:
+
+You can connect the library by downloading the script yourself, and connecting it to the project using the `<script>` tag
+
+```html
+  <script type="text/javascript" src="/css-corn/index.js"></script>
+```
+
+##### import-require:
+
+You can connect the library by installing the package via npm and use the import / require construct
+```js
+  import cssCorn from '@silksofthesoul/css-corn';
+```
+or:
+```js
+  const cssCorn = require('@silksofthesoul/css-corn');
+```
+
+#### How to use:
 
 Connect the library. For example, in the tag 😃 `<head>` 😉
 
