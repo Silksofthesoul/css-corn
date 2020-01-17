@@ -83,7 +83,7 @@ git:
 ```html
 <script>
   // Создайте объект
-  const css = new CssCorn({
+  const css = new $CssCorn({// или new CssCorn -- если вы импортируете модуль
     id: 'my-id', // id тега <style> | Необязательный параметр
     willRender: true // Параметр отвечает, за перманентный рендер вносимых стилей | Не обязательный параметр, по умолчанию – false
   });
@@ -94,7 +94,8 @@ git:
 
 ```html
 <script>
-  const css1 = new CssCorn();
+  import {CssCorn as MyAwesomeCssUnicorn} from '@silksofthesoul/css-corn';
+  const css1 = new MyAwesomeCssUnicorn();
 
   // По шагу на строку
   css1.add('body','opacity: 0; font-family: Arial, sans-serif;');
@@ -188,7 +189,7 @@ Create an object using the class template 🦄 CssCorn 🌽
 ```html
 <script>
   // Create an object
-  const css = new CssCorn({
+  const css = new CssCorn({ // or 'new CssCorn' if you import/require a module
     id: 'my-id', // id of <style> tag | Optional parameter
     willRender: true // The parameter is responsible for the permanent rendering of insertion styles | Optional parameter, false by default
   });
@@ -199,7 +200,8 @@ Now you can ➕ add, ➖ delete and 📝 rename styles
 
 ```html
 <script>
-  const css1 = new CssCorn();
+  import {CssCorn as MyAwesomeCssUnicorn} from '@silksofthesoul/css-corn';
+  const css1 = new MyAwesomeCssUnicorn();
 
   // Step By Line
   css1.add('body','opacity: 0; font-family: Arial, sans-serif;');
