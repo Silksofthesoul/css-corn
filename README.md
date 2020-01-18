@@ -4,7 +4,8 @@
 [github][github] \|
 [issues][issues] \|
 [download][download] \|
-[demo][demo] \|
+[demo source][demosrc] \|
+[demo page][demopage] \|
 [npm][npm]
 
 [![NPM version](https://img.shields.io/npm/v/@silksofthesoul/css-corn.svg?style=flat)](https://www.npmjs.com/package/@silksofthesoul/css-corn) [![NPM monthly downloads](https://img.shields.io/npm/dm/@silksofthesoul/css-corn.svg?style=flat)](https://npmjs.org/package/@silksofthesoul/css-corn) [![NPM total downloads](https://img.shields.io/npm/dt/@silksofthesoul/css-corn.svg?style=flat)](https://npmjs.org/package/@silksofthesoul/css-corn)
@@ -243,4 +244,5 @@ Now you can ➕ add, ➖ delete and 📝 rename styles
 
 [npm]: https://www.npmjs.com/package/@silksofthesoul/css-corn
 
-[demo]: https://github.com/Silksofthesoul/css-corn/blob/master/demo.html
+[demosrc]: https://github.com/Silksofthesoul/css-corn/blob/master/demo.html
+[demopage]: https://silksofthesoul.ru/css-corn
