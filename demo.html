@@ -144,7 +144,7 @@
         <span>// вариант использования. Но возможно -- не лучшая практика</span>
         <strong>new CssCorn({id:'Test'}).add('.test', 'color: green').render();</strong>
 
-        <span>// Еще один пример, когда описанные стили, будут сразу же применятся</span>
+        <span>// Еще один пример, когда описанные стили, будут сразу же применены</span>
         <strong>let css2 = new CssCorn({id:'wow', willRender})
           css2
             .add('.msg': 'color: red')
@@ -268,6 +268,8 @@
       .add(`.title`,`transition: opacity 0.25s 0s ease-out`)
       .add(`.title span`,`letter-spacing: -0.2em;`)
       .add(`.title span`,`transition: transform 0.25s 0s ease-out, letter-spacing 1s 0s ease-out;`)
+      .add(`.title 
+            span`,`transition: transform 0.25s 0s ease-out, letter-spacing 1s 0s ease-out;`)
       .add(`.title span`,`display: inline-block`);
 
       const fac = (time, cb) => {
