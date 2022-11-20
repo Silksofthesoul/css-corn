@@ -1,26 +1,25 @@
 const path = require('path');
-const webpack = require('webpack');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
-  // Change to your "entry-point".
-  mode: 'public',
   entry: path.resolve(__dirname, 'src/index.ts'),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
-    library: 'CssCorn',
-    libraryTarget: 'umd',
+  mode: 'public',
+  module: {
+    rules: [
+      {
+        test: /\.(ts|js)x?$/,
+        loader: 'babel-loader',
+        // use: 'ts-loader',
+        exclude: /(node_modules|dist)/,
+      }
+    ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.tsx', '.ts', '.js', 'json'],
   },
-  module: {
-    rules: [{
-      // Include ts, tsx, js, and jsx files.
-      test: /\.(ts|js)x?$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: 'CssCorn',
+    libraryTarget: 'umd'
   }
-};
+}
