@@ -3,7 +3,7 @@ declare global {
         $CssCorn: any;
     }
 }
-declare type TId = string;
+type TId = string;
 interface IProperty {
     [property: string]: string;
 }
