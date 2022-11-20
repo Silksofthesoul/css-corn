@@ -232,8 +232,9 @@ export class CssCorn {
       return this;
     }
     const en = (o: object) => Object.entries(o);
+    const prepareSelector = (str: string) => str.replace(/\s/gim, ' ').replace(/\s+/gim, ' ');
     const res: string = en(this._styles)
-      .map(item => `${item[0]}{${this.stringify(item[1])}}`).join('');
+      .map(item => `${prepareSelector(item[0])}{${this.stringify(item[1])}}`).join('');
     this._element.innerText = res;
     return this;
   }
